@@ -1,5 +1,5 @@
 export function Person({ person }) {
-  const { name, age, sex, isMarried, partnerName } = person;
+  const { name, age = null, sex, isMarried, partnerName } = person;
 
   return (
     <section className="Person">
@@ -10,7 +10,7 @@ export function Person({ person }) {
           {partnerName} is my {sex === 'm' ? 'wife' : 'husband'}
         </p>
       ) : (
-        <p>I am not married</p>
+        <p className="Person__partner">I am not married</p>
       )}
     </section>
   );
